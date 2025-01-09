@@ -1,9 +1,17 @@
-import { BrowserRouter } from "react-router-dom";
-import {Headers} from "./components/Headers"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Header from "../components/Header";
+import Home from "../pages/Home";
+import About from "../pages/About";
+
 function Router(){
     return <BrowserRouter>
-        <Headers></Headers>
+        <Header />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+        </Routes>
     </BrowserRouter>
 }
 
-export Router;
+export default Router;

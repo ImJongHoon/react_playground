@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function Headers(){
+function Header(){
     return (
         <header>
             <ul>
@@ -11,4 +11,4 @@ function Headers(){
     )
 }
 
-export default Headers;
+export default Header;
