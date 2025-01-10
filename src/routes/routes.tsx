@@ -1,17 +1,32 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import Header from "../components/Header";
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Root from "../Root";
+import NotFound from "../pages/NotFound";
+import User from "../pages/User";
 
-function Router(){
-    return <BrowserRouter>
-        <Header />
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-        </Routes>
-    </BrowserRouter>
-}
+const router = createBrowserRouter([
+    // 모든 라우터들의 컨테이너
+    {
+        path: "/",
+        element: <Root />,
+        children: [
+            {
+                path: "",
+                element: <Home />
+            },
+            {
+                path: "about",
+                element: <About />
+            },
+            {
+                path: "users/:userId",
+                element: <User/>,
+            },
+        ],
+        errorElement: <NotFound />
+    }
+])
 
-export default Router;
+export default router;
