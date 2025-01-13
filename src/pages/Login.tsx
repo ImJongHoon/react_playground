@@ -6,7 +6,7 @@ interface IForm {
 }
 
 function Login(){
-    const {register, watch, handleSubmit, errors} = useForm<IForm>();
+    const {register, watch, handleSubmit} = useForm<IForm>();
 
     console.log(watch())
 
@@ -37,7 +37,6 @@ function Login(){
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="이메일을 입력하세요"
                   />
-                  <span>{errors}</span>
                 </div>
                 <div className="mb-6">
                   <label className="block text-gray-700">비밀번호</label>

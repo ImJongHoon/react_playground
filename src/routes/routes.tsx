@@ -1,11 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Home from "../pages/Home";
+import Home from "../pages/components/LoggedOutHome";
 import About from "../pages/About";
 import App from "../App";
 import NotFound from "../pages/NotFound";
 import User from "../pages/User";
 import Login from "../pages/Login";
+import Signup from "../pages/Signup";
 
 const router = createBrowserRouter([
     // 모든 라우터들의 컨테이너
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "users/:userId",
                 element: <User/>,
+            },
+            {
+                path: "signup",
+                element: <Signup />
             },
         ],
         errorElement: <NotFound />
